@@ -1,0 +1,20 @@
+.searchInput {
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    height: 40px;
+    border: 2px solid #919191;
+}
+
+.searchButton {
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    height: 40px;
+    border: 2px solid #919191;
+    background: #656565;
+    color: aliceblue;
+}
+
+.searchButton:hover {
+    color: #656565;
+    background: aliceblue;
+}

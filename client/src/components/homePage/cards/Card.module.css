@@ -1,0 +1,87 @@
+.containerCard {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 30px;
+    background-color: #000000cf;
+    flex-wrap: wrap;
+    padding-top: 8rem;
+}
+
+.loading {
+    color: azure;
+}
+
+/* NAV */
+.container {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    background: lightgrey;
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+}
+
+.title {
+    color: firebrick;
+    font-family: system-ui;
+}
+
+.select {
+    border-radius: 8px;
+    width: 10rem;
+    margin-right: 1rem;
+    border: 2px solid #919191;
+    padding: 2px;
+    height: 40px;
+    background: initial;
+    font-family: inherit;
+    font-size: medium;
+}
+
+.options {
+    background: #717171;
+    color:aliceblue;
+}
+
+.optionsDisabled {
+    background: #717171;
+    color:rgb(69, 74, 78);
+}
+
+
+.searchInput {
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    height: 40px;
+    border: 2px solid #919191;
+}
+
+.searchButton {
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    height: 40px;
+    border: 2px solid #919191;
+    background: #656565;
+    color: aliceblue;
+}
+
+.searchButton:hover {
+    color: #656565;
+    background: aliceblue;
+}
+
+.create {
+    border-radius: 8px;
+    height: 40px;
+    border: 2px solid #919191;
+    padding: 10px;
+    background: #656565;
+    color: aliceblue;
+}
+
+.create:hover {
+    color: #656565;
+    background: aliceblue;
+}
