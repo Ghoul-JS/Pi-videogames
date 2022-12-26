@@ -1,8 +1,8 @@
-const { Genre } = require("../db.js");
+const {apiGenres} = require('../utils/getGenres/apiGenres.js');
 
 const getGenres = async (req, res) => {
   try {
-    const allGenres = await Genre.findAll()
+    const allGenres = await apiGenres()
     if (!allGenres.length)
       return res.status(404).send("No se encontraron géneros :C");
 

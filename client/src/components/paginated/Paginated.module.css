@@ -1,0 +1,46 @@
+.pagination {
+    padding: 1rem;
+}
+
+.paginationButton {
+    color: #363b40;
+    background: #bebebe;
+    border: 1px solid #e6e6e6;
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 4px;
+    margin: 0 8px;
+    cursor: pointer;
+
+    transform: scale(var(--escala, 1));
+    transition: transform 0.25s;
+}
+
+.paginationButton:hover {
+    --escala: 1.2;
+    cursor:pointer;
+    background: #4854c1;
+    color: rgb(224, 224, 224);
+}
+
+.prevNext {
+    color: #ffffff;
+    background: #3f3f3f;
+    border: 1px solid #e6e6e6;
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 4px;
+    margin: 0 8px;
+    cursor: pointer;
+
+    transform: scale(var(--escala, 1));
+    transition: transform 0.25s;
+}
+
+.active {
+    color: rgb(224, 224, 224);
+    background: #4854c1;
+}
+

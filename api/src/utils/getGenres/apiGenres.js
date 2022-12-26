@@ -16,13 +16,15 @@ const apiGenres = async () => {
   });
   // Guardamos los géneros en nuestra base de datos
   for(let i = 0; i<genres.length; i++) {
-    const {name, id} = genres[i]
+    const {name} = genres[i]
 
     await Genre.findOrCreate({
-      where: {id:id, name:name}
+      where: {name:name}
     })
   }
-  return genresArray;
+  const genresDb = await Genre.findAll()
+  return genresDb
+  // return genresArray;
 };
 
-module.exports = apiGenres;
+module.exports = {apiGenres};

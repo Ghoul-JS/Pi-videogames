@@ -1,0 +1,31 @@
+@import 'https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap';
+
+.container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url('https://mir-s3-cdn-cf.behance.net/project_modules/fs/d9741486424713.5d9904f61484a.gif');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.startButton {
+    width: 469px;
+    height: 105px;
+    background-color: #00000085;
+    font-size: 2.5em;
+    font-weight: bold;
+    border: none;
+    font-family: 'Press Start 2P', cursive;
+}
+
+.title {
+    font-size: 4em;
+    text-align: center;
+    margin-bottom: 20px;
+    color: white;
+    font-family: 'Press Start 2P', cursive;
+}

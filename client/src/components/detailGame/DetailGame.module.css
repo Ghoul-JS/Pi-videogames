@@ -1,0 +1,60 @@
+.container {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    padding: 3rem;
+    /* background: #282728; */
+}
+
+.img {
+    width: 500px;
+    position: relative;
+    z-index: 0;
+    border-width: 10px;
+}
+
+.details{
+    border: 1px solid #ffffff82;
+    border-radius: 6px;
+    padding: 3rem;
+    color: palegreen;
+}
+
+.detailsTxt{
+    background-color: rgb(111 115 133);
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ffffff00;
+    border-radius: 6px;
+    padding: 3rem;
+    text-align: justify;
+    width: 500px;
+    color: aliceblue;
+}
+
+.bg {
+    /* background: #282728; */
+    background-image: url('https://cdn.dribbble.com/users/5946079/screenshots/15271639/my-playing-design-2_4x.jpg');
+    padding: 2.5rem;
+}
+
+.backLink {
+    display: flex;
+    align-items: center;
+    border: 2px solid black;
+    border-radius: 12px;
+    background: rgb(22 20 24);
+    padding: 10px;
+    margin-top: 1em;
+    flex-direction: column;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+.backLink:hover {
+    background: rgb(56, 55, 63);
+    cursor: pointer;
+}

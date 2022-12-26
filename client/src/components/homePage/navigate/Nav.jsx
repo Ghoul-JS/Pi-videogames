@@ -1,11 +1,12 @@
 import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { getGenres, filterByGenre, orderByRating, alphabeticalOrder } from "../../../redux/actions/index.js";
+import { getVideoGames, getGenres, filterByGenre, orderByRating, alphabeticalOrder, apiOrDb } from "../../../redux/actions/index.js";
 import OptionAllGenres from "../AllGenres.jsx";
 import SearchBar from "./searchBar/SearchBar.jsx";
 import style from "./Nav.module.css";
 
-export default function Nav() {
+export default function Nav({setCurrentPage, setOrder}) {
   const dispatch = useDispatch();
   const allGenres = useSelector((state) => state.genres);
 
@@ -14,15 +15,30 @@ export default function Nav() {
   }, [dispatch]);
 
   const handleFilterByGenre = (e) => {
+    e.preventDefault();
     dispatch(filterByGenre(e.target.value));
+    setCurrentPage(1)
   }
 
   const habldeFilterByRate = (e) => {
-    dispatch(orderByRating(e.target.value))
+    e.target.value === "Rating"
+    ? dispatch(getVideoGames)
+    :dispatch(orderByRating(e.target.value))
+    setOrder(e.target.value)
+    setCurrentPage(1)
+
   }
 
   const handleAlphabeticalOrder = (e) => {
     dispatch(alphabeticalOrder(e.target.value))
+    setOrder(e.target.value)
+    setCurrentPage(1)
+  }
+
+  const handleApiOrDBFilter = (e) => {
+    e.preventDefault()
+    dispatch(apiOrDb(e.target.value))
+    setCurrentPage(1)
   }
 
   return (
@@ -33,18 +49,21 @@ export default function Nav() {
         </div>
 
         <div>
-          <select
-            className={style.select}
-            name="Genres"
-            onChange={handleFilterByGenre}
-          >
+
+          <select className={style.select} onChange={handleApiOrDBFilter}>
+              <option className={style.optionsDisabled} value="Videogames">Videogames</option>
+              <option value="API">API</option>
+              <option value="DB">DB</option>
+          </select>
+
+          <select className={style.select} name="Genres" onChange={handleFilterByGenre}>
             <option className={style.optionsDisabled} value="Genres">
               All Games
             </option>
             <OptionAllGenres allGenres={allGenres} />
           </select>
 
-          <select className={style.select} name="Alphabetic" onChange={handleAlphabeticalOrder}>
+          <select className={style.select} name="alphabetic" onChange={handleAlphabeticalOrder}>
             <option className={style.optionsDisabled} value="alphabetic">
               Alphabetic
             </option>
@@ -74,7 +93,9 @@ export default function Nav() {
         </div>
 
         <div>
-          <button className={style.create}>Create</button>
+          <button className={style.create} href="/videogames/form">
+             <Link to='/videogames/form'>Create</Link> 
+          </button>
         </div>
       </div>
     </>

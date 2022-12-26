@@ -26,11 +26,11 @@ module.exports = (sequelize) => {
       type: DataTypes.FLOAT
     },
     platforms: {
-      type: DataTypes.STRING,
+      type: DataTypes.ARRAY(DataTypes.STRING),
       allowNull: false
     },
     background_image: {
-      type: DataTypes.STRING
+      type: DataTypes.TEXT
     },
     dbCreated: { //sirve para distinguir entre la api y DB
       type: DataTypes.BOOLEAN,

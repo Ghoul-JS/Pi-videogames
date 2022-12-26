@@ -1,0 +1,92 @@
+.container {
+    /* background: #222; */
+    background-image: url("https://t3.ftcdn.net/jpg/03/23/88/08/360_F_323880864_TPsH5ropjEBo1ViILJmcFHJqsBzorxUB.jpg");
+    padding: 2.1rem;
+}
+form {
+    display: flex;
+    background-color: rgb(0 0 0 / 82%);
+    color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 0 auto;
+    width: 500px;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 1rem;
+} 
+
+h1 {
+    font-size: 2em;
+    text-align: center;
+    margin-bottom: 20px;
+}
+  
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+  
+  input[type="text"],
+  textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    font-size: 16px;
+    resize: vertical;
+  }
+    
+.createButton,
+.backButton {
+    background-color: #4caf50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
+    font-size: 16px;
+}
+  
+.createButton:hover,
+.backButton:hover {
+    background-color: #45a049;
+}
+  
+.backButton {
+    background-color: #888;
+    color: white;
+    float: left;
+}
+  
+.backButton:hover {
+    background-color: #777;
+}
+
+.select {
+    border-radius: 8px;
+    width: 10rem;
+    margin-right: 1rem;
+    border: 2px solid #ffffff;
+    height: 40px;
+    background: initial;
+    font-family: inherit;
+    font-size: medium;
+    margin-bottom: 1rem;
+    background: rgb(134, 138, 143);
+}
+
+.warning{
+    border: solid rgb(134, 132, 8) 1px;
+    border-radius: 0.2em;
+
+}
+
+.danger {
+    color: red;
+    margin-left: 10em;
+    font-size: medium;
+}

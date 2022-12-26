@@ -1,0 +1,15 @@
+.loader {
+    display: flex;
+    flex-direction: column;
+}
+
+.jhin {
+    width: 30rem;
+}
+
+.loadBar {
+    position:absolute;
+    top: 31rem;
+    left: 38rem;
+    width: 15rem;
+}

@@ -9,8 +9,10 @@ export const getVideoGames = () => {
         payload: data.game, 
       });
     } catch (error) {
-      //MANEJAR ERRORES POR ACTION: PENDING...
-      console.log(error);
+      dispatch({
+        type: 'ERROR',
+        payload: error
+      })
     }
   };
 };
@@ -26,8 +28,29 @@ export const getVideogameId = (id) => {
         payload: data
       })
     }catch(error){
-      //MANEJAR ERRORES POR ACTION: PENDING...
-      console.log(error)
+      dispatch({
+        type: 'ERROR',
+        payload: error
+      })
+    }
+  }
+}
+
+export const filterGameByName = (payload) => {
+  return async function(dispatch) {
+    try{
+      const response = await fetch(`http://localhost:3001/videogames?name=${payload}`);
+      const data = await response.json();
+      console.log("by name:",data)
+      dispatch({
+        type: "FILTER_VIDEOGAME_NAME",
+        payload: data
+      })
+    }catch(error){
+      dispatch({
+        type: 'ERROR',
+        payload: error
+      })
     }
   }
 }
@@ -42,8 +65,38 @@ export const getGenres = () => {
         payload: data, 
       });
     } catch (error) {
-      //MANEJAR ERRORES POR ACTION: PENDING...
-      console.log(error);
+      dispatch({
+        type: 'ERROR',
+        payload: error
+      })
+    }
+  };
+};
+
+export const postNewVideoGame = (videogame) => {
+  return async function (dispatch) {
+    try {
+
+      const options = {
+        method: 'POST',
+        body: JSON.stringify(videogame),
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      }
+      const response = await fetch("http://localhost:3001/videogames", options)
+      console.log(response);
+      const data = await response.json();
+      console.log(data);
+      dispatch({
+        type: "POST_VIDEOGAMES",
+        payload: data, 
+      });
+    } catch (error) {
+      dispatch({
+        type: 'ERROR',
+        payload: error
+      })
     }
   };
 };
@@ -68,3 +121,12 @@ export const alphabeticalOrder = (payload) => {
     payload: payload
   }
 }
+
+export const apiOrDb = (payload) => {
+  return {
+      type: 'API_OR_DB',
+      payload: payload
+    }
+}
+
+
