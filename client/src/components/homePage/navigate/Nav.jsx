@@ -5,6 +5,7 @@ import { getVideoGames, getGenres, filterByGenre, orderByRating, alphabeticalOrd
 import OptionAllGenres from "../AllGenres.jsx";
 import SearchBar from "./searchBar/SearchBar.jsx";
 import style from "./Nav.module.css";
+import img from './logo2.jpeg'
 
 export default function Nav({setCurrentPage, setOrder}) {
   const dispatch = useDispatch();
@@ -45,7 +46,8 @@ export default function Nav({setCurrentPage, setOrder}) {
     <>
       <div className={style.container}>
         <div>
-          <h1 className={style.title}>Khada J</h1>
+          {/* <h1 className={style.title}>Khada J</h1> */}
+          <img className={style.logo} src={img} alt="logo" />
         </div>
 
         <div>

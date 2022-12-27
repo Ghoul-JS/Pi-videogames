@@ -8,6 +8,10 @@
     width: 100%;
 }
 
+.logo {
+    width: 10rem;
+}
+
 .title {
     color: firebrick;
     font-family: system-ui;
@@ -17,10 +21,10 @@
     border-radius: 8px;
     width: 10rem;
     margin-right: 1rem;
-    border: 2px solid #919191;
+    border: 2px solid #444141;
     padding: 2px;
     height: 40px;
-    background: initial;
+    background: #0000003d;
     font-family: inherit;
     font-size: medium;
 }

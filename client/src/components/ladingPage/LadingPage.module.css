@@ -23,9 +23,28 @@
 }
 
 .title {
-    font-size: 4em;
+    /* font-size: 4em;
     text-align: center;
     margin-bottom: 20px;
-    color: white;
+    color: white; */
+    display: block;
+    white-space: nowrap;
+    border-right: 4px solid;
+    width: 18ch;
     font-family: 'Press Start 2P', cursive;
+    color: white;
+    font-size: 3.5em;
+
+    animation: typing 2s steps(18),
+    blink .5s infinite step-end alternate;
+
+    overflow: hidden;
+}
+
+@keyframes typing {
+    from { width: 0 }
+}
+
+@keyframes blink {
+    50% {border-color: transparent;}
 }
