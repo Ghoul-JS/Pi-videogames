@@ -4,7 +4,6 @@ import style from './Individual.module.css'
 import { Link } from "react-router-dom";
 
 export default function IndividualPrueba ({img, name, id, genres, rating}) {
-    //arreglar los generos de la DB en las card
     return (
         <div className={style.containerInd}>
             {console.log(genres)}
@@ -12,8 +11,6 @@ export default function IndividualPrueba ({img, name, id, genres, rating}) {
                 <img className={style.img} src={img} alt={name} />
                 <h2 className={style.txtColor}>{name}</h2>
                 <p className={style.txtColor}>{
-                //  genres
-
                 typeof genres === 'string' 
                 ? genres
                 : (genres?.map(g => g.name).join(' | '))
@@ -21,7 +18,6 @@ export default function IndividualPrueba ({img, name, id, genres, rating}) {
                 </p>
             </Link>
             <p className={style.txtColor}>{rating}</p>
-            {/* <button onClick={() => alert(id)}>X</button> */}
         </div>
     )
 }

@@ -56,7 +56,7 @@ export default function Form() {
                 ...gameInfo,
                 [e.target.name]:e.target.value
             })
-        )  
+        ) 
     }
 
     const handleSelectForPlatforms = (e) =>{
@@ -65,7 +65,7 @@ export default function Form() {
             platforms: [...new Set([...gameInfo.platforms, e.target.value])]
             
         })
-
+        
         setError(
             validation({
                 ...gameInfo,
@@ -138,7 +138,7 @@ export default function Form() {
                     <div>
                         <div>
                         <select className={style.select} onChange={handleSelectForGenres}>
-                            <option value="genres" disabled>Genres</option> 
+                            <option value="genres">Genres</option> 
                             {
                                 genres?.map(genre => (
                                     <option key={genre.id} value={genre.name}>{genre.name}</option>
@@ -146,6 +146,7 @@ export default function Form() {
                             }
                         </select>
                          <p className={style.danger}>{error.genres}</p>
+                         <p>{gameInfo.genres.join(', ')}</p>
                         </div>
                             <div>
                                 <select className={style.select} onChange={handleSelectForPlatforms}>
@@ -157,6 +158,7 @@ export default function Form() {
                                 }
                                 </select>
                                 <p className={style.danger}>{error.platforms}</p>
+                                <p>{gameInfo.platforms.join(', ')}</p>
                             </div>
                     </div>
 

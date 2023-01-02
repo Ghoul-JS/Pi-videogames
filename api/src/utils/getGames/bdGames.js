@@ -5,7 +5,7 @@ const { Videogame, Genre } = require("../../db");
 */
 const dbInfo = async() => {
     const data = await Videogame.findAll({
-        includes: {
+        include: {
             model: Genre,
             attributes: ["name"],
             through: {

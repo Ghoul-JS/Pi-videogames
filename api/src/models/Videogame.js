@@ -31,20 +31,10 @@ module.exports = (sequelize) => {
     background_image: {
       type: DataTypes.TEXT
     },
-    dbCreated: { //sirve para distinguir entre la api y DB
+    dbCreated: {
       type: DataTypes.BOOLEAN,
       allowNull: false,
       defaultValue: true
     },
   }, {timestamps: false});
 };
-
-/*
- * Propiedades dle videojuego:
- * ID*
- * Nombre*
- * Descripción*
- * Fecha de lanzamiento
- * Rating
- * Plataformas*
- */

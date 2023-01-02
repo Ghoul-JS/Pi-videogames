@@ -5,7 +5,7 @@ const { Genre } = require("../../db");
 const apiGenres = async () => {
   const response = await fetch(`https://api.rawg.io/api/genres?key=ae355ce3d1634faebcc9a6be72c035e8`);
   const json = await response.json();
-  console.log(json);
+
   let genres = json.results;
   let genresArray = [];
 
@@ -24,7 +24,6 @@ const apiGenres = async () => {
   }
   const genresDb = await Genre.findAll()
   return genresDb
-  // return genresArray;
 };
 
 module.exports = {apiGenres};

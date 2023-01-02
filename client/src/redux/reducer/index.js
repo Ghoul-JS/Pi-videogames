@@ -27,9 +27,7 @@ export default function rootReducer(state=initialState, action) {
             }
         case 'API_OR_DB':
             const apiOrDb = state.gamesBackUp;
-            console.log(apiOrDb);
             const createdFilter = action.payload === "DB" ? apiOrDb.filter(e => e.dbCreated) : apiOrDb.filter( e => !e.dbCreated)
-            console.log(createdFilter)
             return{
                 ...state,
                 videogames: action.payload === "Videogames" ? state.gamesBackUp : createdFilter
@@ -37,11 +35,22 @@ export default function rootReducer(state=initialState, action) {
 
         case 'FILTER_BY_GENRE':
             const allVideoGames = state.gamesBackUp;
-            const genresFiltered = action.payload === "Genres" ? allVideoGames : allVideoGames.filter(e => e.genres?.includes(action.payload))
-            return{
-                ...state,
-                videogames: genresFiltered,
+            let genresFiltered;
+            if(action.payload === "Genres") {
+                genresFiltered = allVideoGames
+            } else {
+                genresFiltered = allVideoGames.filter(e => {
+                    if(typeof e.genres === "string") return e.genres.includes(action.payload) 
+                    else if(Array.isArray(e.genres) && e.genres.some(ev => ev.name === action.payload)) {
+                        return e.genres.map(el => el.name === action.payload)
+                    }
+                })
             }
+            return {
+                ...state, 
+                videogames: genresFiltered 
+            }
+
         case 'ALPHABETICAL_ORDER':
             const alphabeticSort = action.payload === 'alphabetic' || action.payload === 'upward'
             ? state.videogames.sort((a,b) => {

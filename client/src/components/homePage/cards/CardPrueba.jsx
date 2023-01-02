@@ -7,9 +7,6 @@ import Nav from "../navigate/Nav.jsx";
 import Paginated from "../../paginated/Paginated.jsx";
 import Loader from "../../loader/Loader.jsx";
 
-
-// import style from "./Nav.module.css";
-
 export default function CardPrueba() {
   const dispatch = useDispatch();
   const videogames = useSelector((state) => state.videogames);

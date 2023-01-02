@@ -40,8 +40,9 @@ export const filterGameByName = (payload) => {
   return async function(dispatch) {
     try{
       const response = await fetch(`http://localhost:3001/videogames?name=${payload}`);
+      if(response.status === 404) alert("This Videogame doesn't exist");
       const data = await response.json();
-      console.log("by name:",data)
+      console.log("by name:",data)      
       dispatch({
         type: "FILTER_VIDEOGAME_NAME",
         payload: data
@@ -76,7 +77,6 @@ export const getGenres = () => {
 export const postNewVideoGame = (videogame) => {
   return async function (dispatch) {
     try {
-
       const options = {
         method: 'POST',
         body: JSON.stringify(videogame),
@@ -85,9 +85,7 @@ export const postNewVideoGame = (videogame) => {
         }
       }
       const response = await fetch("http://localhost:3001/videogames", options)
-      console.log(response);
       const data = await response.json();
-      console.log(data);
       dispatch({
         type: "POST_VIDEOGAMES",
         payload: data, 
