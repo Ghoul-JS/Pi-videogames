@@ -71,7 +71,7 @@ const createtVideogames = async (req, res) => {
       background_image,
       genres,
     } = req.body;
-    if (!name || !description || !platforms)
+    if(!name || !description || !platforms)
       return res.status(404).send("Falta enviar datos obligatorios");
 
     const newGame = await Videogame.create({

@@ -1,8 +1,6 @@
 const { Videogame, Genre } = require("../../db");
 
-/**
- * Find all videogames and include the genres associated with each videogame.
-*/
+//Encuentra todos los juegos e incluye los generos asociados por cada videjuego
 const dbInfo = async() => {
     const data = await Videogame.findAll({
         include: {

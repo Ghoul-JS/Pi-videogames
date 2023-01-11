@@ -25,7 +25,7 @@ export default function Nav({setCurrentPage, setOrder}) {
     e.target.value === "Rating"
     ? dispatch(getVideoGames)
     :dispatch(orderByRating(e.target.value))
-    setOrder(e.target.value)
+    setOrder(e.target.value) //el set order es que cuando haga un cambio en el filtro, lugo se sete ese nuevo ordenamiento
     setCurrentPage(1)
 
   }
@@ -81,6 +81,9 @@ export default function Nav({setCurrentPage, setOrder}) {
             <option className={style.optionsDisabled} value="Rating">
               Rating
             </option>
+            {/* <option className={style.optionsDisabled} value="less">
+              Less than four
+            </option> */}
             <option className={style.options} value="Hight">
               Hight Rating
             </option>

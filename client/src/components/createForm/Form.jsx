@@ -163,9 +163,28 @@ export default function Form() {
                     </div>
 
                     <div>
-                        <button type="submit" className={style.createButton}>
+                        {
+                            !gameInfo.name.length || 
+                            !gameInfo.description.length || 
+                            !gameInfo.released || 
+                            !gameInfo.background_image.length ||
+                            !gameInfo.rating ||
+                            !gameInfo.genres.length ||
+                            !gameInfo.platforms.length
+                            ? (
+                                <button type="submit" disabled={true} className={style.disabledButton}>
+                                    Create
+                                </button> 
+                            )
+                            : (
+                                <button type="submit" className={style.createButton}>
+                                    Create
+                                </button>
+                            )
+                        }
+                        {/* <button type="submit" className={style.createButton}>
                             Create
-                        </button>
+                        </button> */}
                         <button type="button" className={style.backButton}>
                             <Link to='/videogames'>Back</Link>
                         </button>

@@ -9,9 +9,7 @@ import LoaderDet from "../loader/loaderDetail/LoaderDet";
 export default function DetailGame() {
   const dispatch = useDispatch();
   const { id } = useParams();
-  console.log(id, "---");
   const detailGame = useSelector((state) => state.detailGame); 
-  console.log(detailGame, "-");
 
   useEffect(() => {
     dispatch(getVideogameId(id));

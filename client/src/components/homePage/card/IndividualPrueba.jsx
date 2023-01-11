@@ -1,5 +1,4 @@
 import React from 'react'
-import { useSelector } from "react-redux";
 import style from './Individual.module.css'
 import { Link } from "react-router-dom";
 

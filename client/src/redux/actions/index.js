@@ -3,7 +3,7 @@ export const getVideoGames = () => {
     try {
       const response = await fetch("http://localhost:3001/videogames");
       const data = await response.json();
-      console.log(data.game)
+      //se toma el dispatch como arguento para mandar un enviar un tipo de accion
       dispatch({
         type: "GET_VIDEOGAMES",
         payload: data.game, 
@@ -22,7 +22,6 @@ export const getVideogameId = (id) => {
     try{
       const response = await fetch(`http://localhost:3001/videogames/${id}`);
       const data = await response.json();
-      console.log("data:",data)
       dispatch({
         type: "GET_VIDEOGAME_ID",
         payload: data
@@ -41,8 +40,7 @@ export const filterGameByName = (payload) => {
     try{
       const response = await fetch(`http://localhost:3001/videogames?name=${payload}`);
       if(response.status === 404) alert("This Videogame doesn't exist");
-      const data = await response.json();
-      console.log("by name:",data)      
+      const data = await response.json();      
       dispatch({
         type: "FILTER_VIDEOGAME_NAME",
         payload: data
@@ -125,6 +123,13 @@ export const apiOrDb = (payload) => {
       type: 'API_OR_DB',
       payload: payload
     }
+}
+
+export const filterRateLessFour = (payload) => {
+  return {
+    type: 'LESS_THAN_FOUR',
+    payload
+  }
 }
 
 

@@ -1,6 +1,5 @@
 const fetch = require("cross-fetch")
 const { API_KEY } = process.env;
-//&page_size=3
 const apiInfo = async() => {
     const games = []
     for(let i=0; i<=5; i++){

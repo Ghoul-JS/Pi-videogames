@@ -16,6 +16,7 @@ export default function CardPrueba() {
   const [gamePerPage, setGamePerPage] = useState(15)
   const lastIndex = currentPage * gamePerPage
   const firstIndex = lastIndex - gamePerPage
+  //me devuelve una copia de una parte del array detro de un nuevo array en pezando por fInx y termina en LIdx
   const currentGames = videogames.slice(firstIndex, lastIndex)
 
   const changedPage = (page) => {

@@ -57,7 +57,7 @@ export default function rootReducer(state=initialState, action) {
                 if(a.name.toUpperCase() > b.name.toUpperCase()) return 1
                 if(a.name.toUpperCase() < b.name.toUpperCase()) return -1
                 return 0
-            } )
+            })
             : state.videogames.sort((a,b) => {
                 if(a.name.toUpperCase() > b.name.toUpperCase()) return -1
                 if(a.name.toUpperCase() < b.name.toUpperCase()) return 1
@@ -100,6 +100,17 @@ export default function rootReducer(state=initialState, action) {
                 ...state,
                 error: action.payload
             }
+        case 'LESS_THAN_FOUR': {
+            const lessThanFour = state.gamesBackUp;
+            let lessFour = action.payload === "less"
+            ? lessThanFour.filter(e => e.rating < 4)
+            : state.videogames
+
+            return {
+                ...state,
+                videogames: lessFour
+            }
+        }
         default:
             return {...state}
     }
